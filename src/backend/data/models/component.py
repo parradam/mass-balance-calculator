@@ -3,5 +3,5 @@ from . import Stream
 
 class Component(models.Model):
     name = models.CharField(max_length=100)
-    parent_stream = models.ForeignKey(Stream, on_delete=models.CASCADE)
+    parent_stream = models.ForeignKey(Stream, on_delete=models.CASCADE, related_name='components')
     flowrate = models.DecimalField(max_digits=12, decimal_places=3, null=True)
